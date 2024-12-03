@@ -16,7 +16,7 @@
 if (true){
     let c = 1;
 }
-// console.log(c);dd
+// console.log(c);dddddddd
 
 
 for( let i = 0; i < 10; i++){

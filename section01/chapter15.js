@@ -29,7 +29,7 @@ let property = "hobby";
 let hobby = person[property];
 console.log(hobby);  
 
-// 3.1 새로운 프로퍼티를 추가하는 방법
+// 3.1 새로운 프로퍼티를 추가하는 방법test
 person.job = "fe developer";
 person["favoriteFood"] = "햄버거";
 console.log(person);

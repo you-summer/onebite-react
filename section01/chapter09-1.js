@@ -28,7 +28,7 @@ switch (animal){ //소괄호 안에는 비교하고싶은 변수를 넣어주면
         break;
     }
     case "dog" : {
-        console.log("강아지");
+        console.log("강아지1");
         break;
     }
     case "bear" :{

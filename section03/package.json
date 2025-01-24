@@ -1,0 +1,12 @@
+{
+  "name": "section03",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node src/index.js" //스크립트의 기능을 이용해서 한방에 복잡한 경로에 있는 파일도 노드를 통해서 실행하도록 명령할수있다!
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

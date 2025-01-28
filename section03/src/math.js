@@ -19,6 +19,6 @@ export function sub(a,b){
 // export {add, sub}
 
 // 곱셈
-export default function multiply(a,b){
+export default  function multiply(a,b){
     return a * b ;
  }

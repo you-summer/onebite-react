@@ -1,14 +1,12 @@
-import './App.css'
 import { useState } from 'react'
-
-import Register from './components/Register'
-
-
+import './App.css'
+import OrderEditor from './components/OrderEditor'
 
 function App() {
+
   return (
     <>
-      <Register/>
+      <OrderEditor/>
     </>
   )
 }

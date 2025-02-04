@@ -1,25 +1,31 @@
 // src/components/OrderEditor.jsx
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const OrderEditor = () => {
-    const [menu, setMenu] = useState("족발"); // 메뉴를 저장하기 위한
-    const [address, setAddress] = useState(""); // 배달 주소를 저장하기 위한
-    const [request, setRequest] = useState(""); // 배달 요청 사항을 저장하기 위한
 
-    const onChangeMenu = (e) =>{
-        setMenu(e.target.value);
-    }
-    const onChangeAddress = (e)=>{
-        setAddress(e.target.value);
-    }
-    const onChangeRequest = (e) => {
-        setRequest(e.target.value);
+    const [order, setOrder] = useState({
+      menu :"",
+      address : "",
+      request : ""
+    });
+
+    const addressRef = useRef();
+
+    const onChange = (e) =>{
+      setOrder({
+        ...order,
+        [e.target.name] : e.target.value
+      })
     }
 
     const onSubmit =()=>{
-        alert(`주문이 완료되었습니다 메뉴 : ${menu}, 주소 : ${address}, 요청사항 : ${request}`)
-        console.log(menu)
+        if(order.address === ""){
+          console.log(addressRef.current);
+          addressRef.current.focus();
+        }else{
+          alert(`주문이 완료되었습니다 메뉴 : ${order.menu}, 주소 : ${order.address}, 요청사항 : ${order.request}`)
+        }
     }
 
 
@@ -32,7 +38,12 @@ const OrderEditor = () => {
           <div style={{ marginBottom: 5, fontSize: 14 }}>
             메뉴 선택
           </div>
-          <select style={{ width: 300, padding: 5 }} onChange={onChangeMenu} value={menu}>
+          <select 
+            name="menu" 
+            style={{ width: 300, padding: 5 }} 
+            onChange={onChange} 
+            value={order.menu}
+          >
             <option value={"족발"}>족발</option>
             <option value={"떡볶이"}>떡볶이</option>
             <option value={"아이스크림"}>아이스크림</option>
@@ -44,9 +55,12 @@ const OrderEditor = () => {
             배달 주소
           </div>
           <input
+            ref={addressRef}
+            name="address"
             style={{ width: 300, padding: 5 }}
             placeholder="주소) 서울특별시 xx동 .."
-            onChange={onChangeAddress} value={address}
+            onChange={onChange} 
+            value={order.address}
           />
         </div>
         <div>
@@ -54,9 +68,10 @@ const OrderEditor = () => {
             배달 요청사항
           </div>
           <textarea
+            name="request"
             style={{ width: 300, padding: 5 }}
             placeholder="배달 요청사항을 써 주세요..."
-            onChange={onChangeRequest} value={request}
+            onChange={onChange} value={order.request}
           />
         </div>
         <div>

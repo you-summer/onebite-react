@@ -15,7 +15,7 @@ const Register = () =>{
         name:"",
         birth:"",
         country:"",
-        bio:""
+        bio:"",
     });
     // 모든 유저의 입력을 저장할거다 라고 해서 input, setInput으로 만들어줌
 

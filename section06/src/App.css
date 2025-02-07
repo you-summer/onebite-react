@@ -1,0 +1,16 @@
+body {
+  padding : 20px
+}
+
+.App {
+  margin: 0 auto ;
+  width: 400px;
+}
+
+.App > section {
+  background-color: rgb(245, 245, 245);
+  border : 1px solid rgb(240, 240, 240); /* solid 직선 */
+  border-radius: 5px ; /*모서리 둥글게 만들어주는거*/
+  padding: 20px; /*내부여백*/
+  margin-bottom: 10px;
+} 

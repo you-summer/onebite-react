@@ -27,3 +27,9 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+.content.done{
+    text-decoration: line-through;
+    text-decoration-color: gray;
+    color : gray;
+}

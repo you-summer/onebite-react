@@ -1,0 +1,22 @@
+.Editor{
+    display: flex;
+    gap:10px;
+}
+
+.Editor input{
+    flex: 1;
+    padding: 15px;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 5px;
+}
+/* flex의 속성 값을 1로 설정해주면 input태그가 부모요소를 벗어나지 않는 선에서
+   늘어날 수 있는 최대의 길이만큼 늘어남  */
+
+.Editor button{
+    cursor : pointer;
+    width: 80px;
+    border: none;
+    background-color: rgb(37, 147, 255);
+    color: white;
+    border-radius: 5px;
+}

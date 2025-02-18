@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
 
 const Edit = () =>{
-    const param = useParams();
+    const params = useParams();
 
-    return(<div>{param.id}페이지입니다</div>)
+    return(<div>{params.id}번째 일기 수정페이지입니다.</div>)
     
 }
 

@@ -1,0 +1,16 @@
+.Header {
+    display: flex;
+    align-items: center;
+
+    padding: 20px 0px; /* 상하 좌우 */
+}
+
+.Header > div{
+    display: flex;
+}
+
+.Header .header_center {
+    width: 50%;
+    font-size: 25px;
+    justify-content: center;
+}

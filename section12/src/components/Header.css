@@ -3,6 +3,7 @@
     align-items: center;
 
     padding: 20px 0px; /* 상하 좌우 */
+    border-bottom: 1px solid rgb(226, 226, 226);
 }
 
 .Header > div{
@@ -13,4 +14,14 @@
     width: 50%;
     font-size: 25px;
     justify-content: center;
+}
+
+.Header .header_left {
+    width: 25%;
+    justify-content: flex-start;
+}
+
+.Header .header_right {
+    width: 25%;
+    justify-content: flex-end;
 }

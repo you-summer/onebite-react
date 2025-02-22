@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 const DiaryItem = ({ id, emotionId, createdDate, content }) => {
   const nav = useNavigate();
+
+  function onClickDeleteButton() {}
+
   return (
     <div className="DiaryItem">
       <div
@@ -33,7 +36,11 @@ const DiaryItem = ({ id, emotionId, createdDate, content }) => {
           }}
           text={"수정하기"}
         />
-        <Button text={"삭제하기"} type={"NEGATIVE"} onClick={delete()}/>
+        <Button
+          text={"삭제하기"}
+          type={"NEGATIVE"}
+          onClick={onClickDeleteButton}
+        />
       </div>
     </div>
   );

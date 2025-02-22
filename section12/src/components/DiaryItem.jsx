@@ -2,11 +2,16 @@ import { getEmotionImage } from "../util/get-emotion-image";
 import Button from "./Button";
 import "./DiaryItem.css";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { DiaryDispatchContext } from "../App";
 
 const DiaryItem = ({ id, emotionId, createdDate, content }) => {
   const nav = useNavigate();
+  const { onDelete } = useContext(DiaryDispatchContext);
 
-  function onClickDeleteButton() {}
+  function onClickDeleteButton() {
+    onDelete(id);
+  }
 
   return (
     <div className="DiaryItem">

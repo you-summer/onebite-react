@@ -1,7 +1,7 @@
 import "./Editor.css";
 import EmotionItem from "./EmotionItem";
 import Button from "./Button";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const emotionList = [
@@ -44,7 +44,7 @@ const getStringedDate = (targetDate) => {
 };
 
 // section 태그는 div 태그와 이름만 다를뿐 기능은 동일함
-const Editor = ({ onSubmit }) => {
+const Editor = ({ initData, onSubmit }) => {
   const [input, setInput] = useState({
     createDate: new Date(),
     emotionId: 3,
@@ -52,6 +52,15 @@ const Editor = ({ onSubmit }) => {
   });
 
   const nav = useNavigate();
+
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+        createDate: new Date(Number(initData.createdDate)),
+      });
+    }
+  }, [initData]);
 
   function onChangeInput(e) {
     // console.log(e.target.name); // 어떤 요소에 입력이 들어온건지

@@ -4,12 +4,7 @@ import Home from "./pages/Home";
 import Diary from "./pages/Diary";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
-import {
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Notfound from "./pages/Notfound";
 
 const mockData = [
@@ -74,12 +69,7 @@ function App() {
   };
 
   // 기존 일기 수정
-  const onUpdate = (
-    id,
-    createdDate,
-    emotionId,
-    content
-  ) => {
+  const onUpdate = (id, createdDate, emotionId, content) => {
     dispatch({
       type: "UPDATE",
       data: {

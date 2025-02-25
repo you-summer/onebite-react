@@ -21,7 +21,7 @@ const Diary = () => {
   return (
     <div>
       <Header
-        title={`${title} 기록`}
+        title={`${title} 기록ㅇ`}
         leftChild={
           <Button onClick={() => nav(-1)} text={"< 뒤로가기"} />
         }

@@ -3,45 +3,8 @@ import EmotionItem from "./EmotionItem";
 import Button from "./Button";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-const emotionList = [
-  {
-    emotionId: 1,
-    emotionName: "완전 좋음",
-  },
-  {
-    emotionId: 2,
-    emotionName: "좋음",
-  },
-  {
-    emotionId: 3,
-    emotionName: "그럭 저럭",
-  },
-  {
-    emotionId: 4,
-    emotionName: "나쁨",
-  },
-  {
-    emotionId: 5,
-    emotionName: "끔찍함",
-  },
-];
-
-const getStringedDate = (targetDate) => {
-  // 날짜 -> YYYY-MM-DD
-  let year = targetDate.getFullYear();
-  let month = targetDate.getMonth() + 1; //초기값이 0임 그래서 +1해줘야됨
-  let date = targetDate.getDate();
-
-  if (month < 10) {
-    month = `0${month}`;
-  }
-  if (date < 10) {
-    date = `0${date}`;
-  }
-
-  return `${year}-${month}-${date}`;
-};
+import { emotionList } from "../util/constants";
+import { getStringedDate } from "../util/get-stringed-date";
 
 // section 태그는 div 태그와 이름만 다를뿐 기능은 동일함
 const Editor = ({ initData, onSubmit }) => {

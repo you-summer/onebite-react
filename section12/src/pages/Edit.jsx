@@ -4,26 +4,14 @@ import Button from "../components/Button";
 import Editor from "../components/Editor";
 import { useContext, useEffect, useState } from "react";
 import { DiaryDispatchContext, DiaryStateContext } from "../App";
+import useDiary from "../hooks/useDiary";
 
 const Edit = () => {
   const params = useParams();
   const nav = useNavigate();
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
-  const data = useContext(DiaryStateContext);
-  const [curDiaryItem, setCurDaryItem] = useState();
 
-  useEffect(() => {
-    const currentDiaryItem = data.find(
-      (item) => String(item.id) === String(params.id)
-    );
-
-    if (!currentDiaryItem) {
-      window.alert("존재하지 않는 일기입니다.");
-      nav("/", { replace: true });
-    }
-
-    setCurDaryItem(currentDiaryItem);
-  }, [params.id]);
+  const curDiaryItem = useDiary(params.id);
 
   //삭제버튼이 클릭되었을때 동작할 함수
   const onClickDelete = () => {

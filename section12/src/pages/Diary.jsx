@@ -13,7 +13,7 @@ const Diary = () => {
   console.log(curDiaryItem);
 
   if (!curDiaryItem) {
-    return <div>데이터 로딩중...!</div>;
+    return <div>데이터 로딩중.......!</div>;
   }
   const { createdDate, emotionId, content } = curDiaryItem;
   const title = getStringedDate(new Date(createdDate));
